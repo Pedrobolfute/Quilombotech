@@ -35,29 +35,34 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Função para carregar os pontos históricos (AGORA USA DADOS MOCKADOS)
 async function loadHistoricPoints() {
-    // 1. **REMOVA O TRECHO 'fetch'**
+    try {
+        const response = await fetch('/api/points');
 
-    // 2. **USE OS DADOS MOCKADOS DIRETAMENTE**
-    const points = mockPoints;
-    
-    // Processamento dos pontos (o código daqui para baixo permanece o mesmo)
-    points.forEach(point => {
-        if (point.latitude && point.longitude) {
-            const marker = L.marker([point.latitude, point.longitude]).addTo(map);
-            
-            marker.bindPopup(`
-                <b>${point.name}</b><br>
-                ${point.description || 'Ponto Histórico'}
-            `);
+        if (!response.ok) {
+            throw new Error("Erro ao carregar pontos");
         }
-    });
 
-    // Atualiza a contagem de locais no box lateral
-    const countElement = document.querySelector('.count-box .count');
-    if (countElement) {
-        countElement.textContent = points.length;
+        const points = await response.json();
+
+        points.forEach(point => {
+            if (point.latitude && point.longitude) {
+                const marker = L.marker([point.latitude, point.longitude]).addTo(map);
+
+                marker.bindPopup(`
+                    <b>${point.title}</b><br>
+                    ${point.info}
+                `);
+            }
+        });
+
+        // Atualiza contagem
+        document.querySelector('.count-box .count').textContent = points.length;
+
+    } catch (err) {
+        console.error("ERRO AO BUSCAR PONTOS:", err);
     }
 }
+
 
 // Chama a função ao carregar o script
 loadHistoricPoints();
