@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Patrimônio Afro-Brasileiro da Bahia</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <h1>Patrimônio Afro-Brasileiro da Bahia</h1>
+            <p>Explore museus, terreiros, igrejas e locais históricos da cultura negra em Salvador</p>
+        </div>
+        <div class="header-right">
+            <span class="consciencia">Consciência Negra</span>
+            <span class="data">20 de Novembro</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="map-container">
+            <div id="map"></div>
+            <div class="count-box">
+                <span class="count">12</span>
+                <span class="label">Locais</span>
+            </div>
+            <button class="search-btn">🔍</button>
+        </div>
+
+        <aside class="sidebar">
+            <div class="hero-info-tabs">
+                <button class="tab-btn active">🧑‍🤝‍🧑 Heróis</button>
+                <button class="tab-btn">ℹ️ Info</button>
+            </div>
+            
+            <div class="hero-list">
+                <div class="hero-card">
+                    <h3>Zumbi dos Palmares</h3>
+                    <p>Líder do Quilombo dos Palmares e símbolo da resistência negra. 1655-1695</p>
+                </div>
+                <div class="hero-card">
+                    <h3>Dandara</h3>
+                    <p>Guerreira do Quilombo dos Palmares, esposa de Zumbi. ?-1694</p>
+                </div>
+                <div class="hero-card call-to-action">
+                    <h3>Carolina Maria de Jesus</h3>
+                    <p>Valorizar, Respeitar, Celebrar</p>
+                </div>
+            </div>
+            
+            <div class="category-panel">
+                <h4>Categorias</h4>
+                <ul>
+                    <li class="active">🏛️ Patrimônio Histórico</li>
+                    <li>🖼️ Museus</li>
+                    <li>🎶 Cultura & Tradição</li>
+                </ul>
+                <p class="footer-count">12 locais históricos</p>
+            </div>
+        </aside>
+    </main>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* Estilos Gerais */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    color: white;
+    /* Cores do topo baseadas na imagem (amarelo-verde-vermelho) */
+    background: linear-gradient(to right, #DAA520 0%, #38761D 50%, #990000 100%);
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.header-left p {
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+.header-right {
+    text-align: right;
+    font-size: 0.9em;
+}
+
+.consciencia {
+    display: block;
+    font-weight: bold;
+}
+
+/* Layout Principal */
+.container {
+    display: flex;
+    height: calc(100vh - 80px); /* Altura da tela menos o header */
+}
+
+/* Mapa */
+#map-container {
+    position: relative;
+    flex-grow: 1; /* Ocupa o máximo de espaço possível */
+    background-color: #ddd; /* Cor de fundo enquanto o mapa carrega */
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px; /* Largura fixa para a sidebar */
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Componentes da Sidebar */
+.hero-info-tabs {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background-color: #DAA520; /* Destaque amarelo */
+}
+
+.hero-card {
+    background-color: #2e2e2e;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid #DAA520;
+}
+
+.hero-card.call-to-action {
+    background-color: #000;
+    text-align: center;
+    padding: 20px 10px;
+    border-left: 5px solid red;
+}
+
+/* Painel de Categorias no Mapa (Posicionamento absoluto) */
+.category-panel {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: white;
+    color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.category-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.category-panel li {
+    padding: 8px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.category-panel li.active {
+    color: #38761D; /* Verde escuro */
+    border-left: 3px solid #38761D;
+    padding-left: 5px;
+}
+
+.footer-count {
+    margin-top: 10px;
+    font-size: 0.8em;
+    border-top: 1px solid #ccc;
+    padding-top: 5px;
+}
+
+/* Contagem de Locais e Botão de Busca (Posicionamento absoluto) */
+.count-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #1a1a1a;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    z-index: 1000;
+}
+
+.count-box .count {
+    font-size: 2em;
+    font-weight: bold;
+    display: block;
+}
+
+.count-box .label {
+    font-size: 0.7em;
+    display: block;
+}
+
+.search-btn {
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
