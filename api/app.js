@@ -4,6 +4,8 @@ const { getFirestore } = require('firebase-admin/firestore');
 
 const app = express();
 
+app.use(express.static('public'));
+
 const port = 3000;
 
 const serviceAccount = require("./firebase.json");
