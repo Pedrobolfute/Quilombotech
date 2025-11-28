@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrimônio Afro-Brasileiro da Bahia</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <h1>QuilomboTech Afro-Brasileiro</h1>
+            <p>Explore terreiros e locais históricos da cultura negra na Bahia</p>
+        </div>
+        <div class="header-right">
+            <span class="consciencia">Consciência Negra</span>
+            <span class="data">20 de Novembro</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="map-container">
+            <div id="center-crosshair"></div>
+            
+            <div id="map"></div>
+            <div class="count-box">
+                <span class="count">0</span>
+                <span class="label">Locais</span>
+            </div>
+           
+        </div>
+
+        <aside class="sidebar">
+            <div class="hero-info-tabs">
+                <button class="tab-btn active">⏳ Linha do Tempo</button>
+            </div>
+            
+            <div class="hero-list">
+            </div>
+            
+        </aside>
+    </main>
+
+    <div class="status-badge">
+        <div id="status-light" class="indicator"></div>
+        <span id="status-text">Carregando IA...</span>
+    </div>
+
+    <div class="gesture-legend">
+        <b>Controle por Gestos:</b><br>
+        <span class="icon">🖐️</span> <b>Aberta:</b> Zoom -<br>
+        <span class="icon">✊</span> <b>Fechada:</b> Zoom +<br>
+        <span class="icon">☝️</span> <b>Indicador:</b> Navegar<br>
+        <i>*Aponte a mira para ver detalhes</i>
+    </div>
+
+    <div class="camera-wrapper">
+        <div class="camera-container">
+            <video id="webcam" autoplay playsinline></video>
+            <div id="arrow-up" class="arrow arrow-up">▲</div>
+            <div id="arrow-down" class="arrow arrow-down">▼</div>
+            <div id="arrow-left" class="arrow arrow-left">◀</div> 
+            <div id="arrow-right" class="arrow arrow-right">▶</div>
+            <div id="finger-tracker"></div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    <script type="module" src="js/vision.js"></script>
+</body>
+</html>
